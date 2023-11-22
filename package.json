@@ -1,0 +1,13 @@
+{
+  "name": "shin.jing.rui-bot",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "announce-for-study-support": "node scripts/announce-for-study-support.js"
+  },
+  "author": "@yukendev",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
