@@ -1,3 +1,10 @@
+import { sendMessageToGroup } from "../api/line/sendMessageToGroup.js";
+
+import dotenv from "dotenv";
+
+// read .env file
+dotenv.config();
+
 // 現在の日付を取得
 const today = new Date();
 // getDayメソッドを使用して曜日を取得 (0が日曜日、1が月曜日、2が火曜日、...、6が土曜日)
@@ -14,3 +21,6 @@ const daysOfWeek = [
 ];
 // 結果を表示
 console.log(`今日は${daysOfWeek[dayOfWeek]}です。`);
+console.log(process.env.ACCESS_TOKEN);
+
+sendMessageToGroup(`今日は${daysOfWeek[dayOfWeek]}です。`);
