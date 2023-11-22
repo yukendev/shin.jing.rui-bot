@@ -4,6 +4,8 @@ name: Day test
 #   schedule:
 #     - cron: "15 * * * *"
 on: [push]
+env:
+  ACCESS_TOKEN: hoge
 jobs:
   build:
     runs-on: ubuntu-latest
