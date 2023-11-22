@@ -21,5 +21,6 @@ const daysOfWeek = [
 ];
 // 結果を表示
 console.log(`今日は${daysOfWeek[dayOfWeek]}です。`);
+console.log(process.env.ACCESS_TOKEN);
 
 sendMessageToGroup(`今日は${daysOfWeek[dayOfWeek]}です。`);
