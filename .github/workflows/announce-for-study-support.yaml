@@ -1,0 +1,14 @@
+# 月2回の学習支援の参加者募集のアナウンスメントのためのワークフロー
+# name: Announce for study support
+# on: [push]
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Send message
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: "20.x"
+#       - run: npm run announce-for-study-support
