@@ -4,7 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "announce-for-study-support": "node scripts/announce-for-study-support.js"
+    "announce-for-study-support": "node scripts/announce-for-study-support.js",
+    "day-test": "node scripts/day-test.js"
   },
   "author": "@yukendev",
   "license": "ISC",
