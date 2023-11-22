@@ -5,7 +5,8 @@ name: Day test
 #     - cron: "15 * * * *"
 on: [push]
 env:
-  ACCESS_TOKEN: hoge
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  YUKEN_LINE_ID: ${{ secrets.YUKEN_LINE_ID }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,9 +17,5 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20.x"
-        env:
-          ACCESS_TOKEN: hoge
-          YUKEN_LINE_ID: ${{ secrets.YUKEN_LINE_ID }}
-      - run: echo ${{ secrets.ACCESS_TOKEN }}
       - run: npm install
       - run: npm run day-test
