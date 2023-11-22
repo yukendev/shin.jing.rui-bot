@@ -1,9 +1,8 @@
 # 曜日のテスト
 name: Day test
-# on:
-#   schedule:
-#     - cron: "15 * * * *"
-on: [push]
+on:
+  schedule:
+    - cron: "15 * * * *"
 env:
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   YUKEN_LINE_ID: ${{ secrets.YUKEN_LINE_ID }}
