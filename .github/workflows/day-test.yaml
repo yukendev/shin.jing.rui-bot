@@ -1,15 +1,19 @@
 # 曜日のテスト
 name: Day test
-on:
-  schedule:
-    - cron: "15 * * * *"
+# on:
+#   schedule:
+#     - cron: "15 * * * *"
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-      - name: Send message
+      - name: Day test
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          YUKEN_LINE_ID: ${{ secrets.YUKEN_LINE_ID }}
         uses: actions/setup-node@v3
         with:
           node-version: "20.x"
