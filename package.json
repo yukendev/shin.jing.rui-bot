@@ -9,6 +9,7 @@
   "author": "@yukendev",
   "license": "ISC",
   "dependencies": {
+    "dayjs": "^1.11.10",
     "dotenv": "^16.3.1"
   }
 }
