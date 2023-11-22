@@ -1,4 +1,9 @@
-import { sendMessageToGroup } from "../api/line/sendMessageToGroup";
+import { sendMessageToGroup } from "../api/line/sendMessageToGroup.js";
+
+import dotenv from "dotenv";
+
+// read .env file
+dotenv.config();
 
 // 現在の日付を取得
 const today = new Date();
