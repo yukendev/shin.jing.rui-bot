@@ -2,6 +2,7 @@
   "name": "shin.jing.rui-bot",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "announce-for-study-support": "node scripts/announce-for-study-support.js"
   },
