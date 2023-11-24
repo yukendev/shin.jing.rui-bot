@@ -23,5 +23,5 @@ const daysOfWeek = [
 console.log(`今日は${daysOfWeek[dayOfWeek]}です。`);
 console.log(process.env.ACCESS_TOKEN);
 
-sendMessageToGroup("現在の時刻は", new Date());
+sendMessageToGroup(`現在の時刻は: ${new Date()}`);
 sendMessageToGroup(`今日は${daysOfWeek[dayOfWeek]}です。`);
