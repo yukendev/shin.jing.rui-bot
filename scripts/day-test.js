@@ -1,5 +1,5 @@
 import { sendMessageToGroup } from "../api/line/sendMessageToGroup.js";
-
+import { getWeekOfMonth } from "../utils/date.js";
 import dotenv from "dotenv";
 
 // read .env file
@@ -19,9 +19,11 @@ const daysOfWeek = [
   "金曜日",
   "土曜日",
 ];
-// 結果を表示
-console.log(`今日は${daysOfWeek[dayOfWeek]}です。`);
-console.log(process.env.ACCESS_TOKEN);
+const weekOfMonth = getWeekOfMonth();
 
-sendMessageToGroup(`現在の時刻は: ${new Date()}`);
-sendMessageToGroup(`今日は${daysOfWeek[dayOfWeek]}です。`);
+// テストメッセージの送信
+sendMessageToGroup(
+  `現在の時刻は: ${new Date()}。今日は第${weekOfMonth}週の${
+    daysOfWeek[dayOfWeek]
+  }です。`
+);
