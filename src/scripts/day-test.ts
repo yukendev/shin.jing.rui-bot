@@ -25,5 +25,5 @@ const weekOfMonth = getWeekOfMonth();
 sendMessageToGroup(
   `現在の時刻は: ${new Date()}。今日は第${weekOfMonth}週の${
     daysOfWeek[dayOfWeek]
-  }です。`
+  }です。`,
 );

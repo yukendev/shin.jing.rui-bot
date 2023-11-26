@@ -1,5 +1,3 @@
-
-
 // 今日が今月の第何週かを求める
 export const getWeekOfMonth = () => {
   // 今日の日付を取得
