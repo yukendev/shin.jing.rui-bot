@@ -2,15 +2,34 @@
 name: Daily workflow
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: "15 * * * *"
+env:
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  YUKEN_LINE_ID: ${{ secrets.YUKEN_LINE_ID }}
+  TZ: "Asia/Tokyo"
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Daily workflow
         uses: actions/setup-node@v3
         with:
           node-version: "20.x"
-      - run: npm run daily-forkflow
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm tsc
+
+      - name: Run script
+        run: pnpm run daily-forkflow
