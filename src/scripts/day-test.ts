@@ -1,4 +1,4 @@
-import { sendMessageToGroup } from "../api/line/sendMessageToGroup.js";
+import { sendMessageToGroup } from "../api/sendMessageToGroup.js";
 import { getWeekOfMonth } from "../utils/date.js";
 import dotenv from "dotenv";
 
