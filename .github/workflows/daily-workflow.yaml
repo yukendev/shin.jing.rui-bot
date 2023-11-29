@@ -2,7 +2,7 @@
 name: Daily workflow
 on:
   schedule:
-    - cron: "15 * * * *"
+    - cron: "15 12 * * *"
 env:
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   YUKEN_LINE_ID: ${{ secrets.YUKEN_LINE_ID }}
