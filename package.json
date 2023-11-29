@@ -4,6 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "format": "npx prettier --write 'src/**/*.ts' && eslint --fix --ext .ts src",
     "daily-forkflow": "node ./build/workflow/daily/index.js"
   },
