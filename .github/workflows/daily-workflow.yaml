@@ -6,6 +6,7 @@ on:
 env:
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   YUKEN_LINE_ID: ${{ secrets.YUKEN_LINE_ID }}
+  SHINJINGRUI_GROUP_ID: ${{ secrets.SHINJINGRUI_GROUP_ID }}
   TZ: "Asia/Tokyo"
 jobs:
   build:
