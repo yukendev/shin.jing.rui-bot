@@ -1,12 +1,10 @@
 import https from "https";
 
-export const sendMessageToGroup = (message: string) => {
-  const myId = process.env.YUKEN_LINE_ID;
-  //   const groupId
+export const sendLineMessage = (id: string, message: string) => {
   const token = process.env.ACCESS_TOKEN;
 
   const data = JSON.stringify({
-    to: myId,
+    to: id,
     messages: [
       {
         type: "text",
