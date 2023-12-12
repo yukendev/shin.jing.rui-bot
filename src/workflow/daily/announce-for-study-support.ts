@@ -5,7 +5,7 @@ import { getWeekOfMonth, isSaturday } from "../../utils/date.js";
    学習報告のリマインド、参加メンバー募集
  */
 export const announceForStudySupport = () => {
-  const groupId = process.env.SHINJINGRUI_GROUP_ID;
+  const groupId = process.env.SHINJINGRUI_LINE_GROUP_ID;
   if (groupId === undefined) return;
   const weekOfMonth = getWeekOfMonth();
   // 毎月第一土曜日と第三土曜日にグループに送信
