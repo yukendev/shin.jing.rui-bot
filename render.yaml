@@ -1,0 +1,7 @@
+services:
+- type: cron
+    name: hourly job
+    runtime: node
+    schedule: "15 * * * *"
+    buildCommand: pnpm run build
+    startCommand: pnpm run job:hourly
