@@ -5,3 +5,4 @@ services:
     schedule: "15 * * * *"
     buildCommand: pnpm install && pnpm run build
     startCommand: pnpm run job:hourly
+    region: singapore
