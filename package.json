@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "format": "npx prettier --write 'src/**/*.ts' && eslint --fix --ext .ts src",
-    "job:hourly": "node ./build/jobs/hourly.js",
+    "job:daily": "node ./build/jobs/daily.js",
     "job:saturday": "node ./build/jobs/saturday.js"
   },
   "author": "@yukendev",

@@ -1,8 +1,8 @@
 services:
   - type: cron
-    name: hourly job
+    name: daily job
     runtime: node
-    schedule: "15 * * * *"
+    schedule: "45 21 * * *"
     buildCommand: pnpm install && pnpm run build
-    startCommand: pnpm run job:hourly
+    startCommand: pnpm run job:daily
     region: singapore
