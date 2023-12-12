@@ -3,17 +3,26 @@ import { getWeekOfMonth } from "../utils/date.js";
 import dotenv from "dotenv";
 
 /*
-   土曜日に実行されるジョブのテスト実行
+   日本時間で毎週土曜日の午前９時半に実行されるジョブ
  */
-
 dotenv.config();
 
-const weekOfMonth = getWeekOfMonth();
+const shinjingruiGroupId = process.env.SHINJINGRUI_LINE_GROUP_ID;
 
-const myId = process.env.YUKEN_LINE_ID;
-if (myId != undefined) {
-  sendLineMessage(
-    myId,
-    `現在の時刻は${new Date()}。getWeekOfMonth()実行の結果は${weekOfMonth}`
-  );
+if (shinjingruiGroupId !== undefined) {
+  const weekOfMonth = getWeekOfMonth();
+
+  if (weekOfMonth === (1 || 3)) {
+    // 学習支援&子ども食堂が開催されない土曜日
+    sendLineMessage(
+      shinjingruiGroupId,
+      "来週の学習支援に参加できる人は、絵文字で反応をオネガイシマス🐈‍⬛"
+    );
+  } else if (weekOfMonth === (2 || 4)) {
+    // 学習支援&子ども食堂が開催される土曜日
+    sendLineMessage(
+      shinjingruiGroupId,
+      `今日は第${weekOfMonth}週の土曜日。学習支援と子ども食堂の開催日です🐈‍⬛`
+    );
+  }
 }

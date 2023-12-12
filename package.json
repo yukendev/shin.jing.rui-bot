@@ -6,8 +6,9 @@
   "scripts": {
     "build": "tsc",
     "format": "npx prettier --write 'src/**/*.ts' && eslint --fix --ext .ts src",
-    "job:daily": "node ./build/jobs/daily.js",
-    "job:saturday": "node ./build/jobs/saturday.js"
+    "job:saturday": "node ./build/jobs/saturday.js",
+    "job:monday": "node ./build/jobs/monday.js",
+    "job:monthly": "node ./build/jobs/monthly.js"
   },
   "author": "@yukendev",
   "license": "ISC",

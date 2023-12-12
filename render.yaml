@@ -1,8 +1,27 @@
 services:
+  # 日本時間の毎週土曜日の午前9時30分に実行
   - type: cron
-    name: daily job
+    name: saturday job
     runtime: node
-    schedule: "0 14 * * *"
+    schedule: "30 0 * * 6"
     buildCommand: pnpm install && pnpm run build
-    startCommand: pnpm run job:daily
+    startCommand: pnpm run job:saturday
+    region: singapore
+
+  # 日本時間の毎週月曜日の午前9時30分に実行
+  - type: cron
+    name: monday job
+    runtime: node
+    schedule: "30 0 * * 1"
+    buildCommand: pnpm install && pnpm run build
+    startCommand: pnpm run job:monday
+    region: singapore
+
+  # 日本時間の毎月1日の午後12時に実行
+  - type: cron
+    name: monthly job
+    runtime: node
+    schedule: "0 3 1 * *"
+    buildCommand: pnpm install && pnpm run build
+    startCommand: pnpm run job:monthly
     region: singapore
