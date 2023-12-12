@@ -2,7 +2,7 @@ services:
   - type: cron
     name: daily job
     runtime: node
-    schedule: "45 21 * * *"
+    schedule: "0 14 * * *"
     buildCommand: pnpm install && pnpm run build
     startCommand: pnpm run job:daily
     region: singapore
