@@ -1,1 +1,4 @@
-# shin.jing.rui-bot
+For [NPOしんじん・るい](https://shinjingrui.com/)
+
+
+
