@@ -3,13 +3,8 @@ services:
     name: hourly job
     runtime: node
     schedule: "15 * * * *"
-    buildCommand: pnpm run build
+    buildCommand: pnpm install && pnpm run build
     startCommand: pnpm run job:hourly
-    envVars:
-      - fromGroup: env
-
-envVarGroups:
-  - name: env
     envVars:
       - key: LINE_ACCESS_TOKEN
         sync: false
