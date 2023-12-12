@@ -1,7 +1,7 @@
 import https from "https";
 
 export const sendLineMessage = (id: string, message: string) => {
-  const token = process.env.ACCESS_TOKEN;
+  const token = process.env.LINE_ACCESS_TOKEN;
 
   const data = JSON.stringify({
     to: id,

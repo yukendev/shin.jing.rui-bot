@@ -1,0 +1,21 @@
+services:
+  - type: cron
+    name: hourly job
+    runtime: node
+    schedule: "15 * * * *"
+    buildCommand: pnpm run build
+    startCommand: pnpm run job:hourly
+    envVars:
+      - fromGroup: env
+
+envVarGroups:
+  - name: env
+    envVars:
+      - key: LINE_ACCESS_TOKEN
+        sync: false
+      - key: YUKEN_LINE_ID
+        sync: false
+      - key: SHINJINGRUI_LINE_GROUP_ID
+        sync: false
+      - key: NEKKO_LINE_GROUP_ID
+        sync: false

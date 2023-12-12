@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "format": "npx prettier --write 'src/**/*.ts' && eslint --fix --ext .ts src",
-    "daily-forkflow": "node ./build/workflow/daily/index.js"
+    "job:hourly": "node ./build/jobs/hourly.js",
+    "job:saturday": "node ./build/jobs/saturday.js"
   },
   "author": "@yukendev",
   "license": "ISC",
