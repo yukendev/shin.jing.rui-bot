@@ -10,7 +10,6 @@ import dayjs from "dayjs";
 dotenv.config();
 
 const myId = process.env.YUKEN_LINE_ID;
-const shinjingruiGroupId = process.env.SHINJINGRUI_LINE_GROUP_ID;
 
 const sendGoogleCalendarEvents = async () => {
   const minDate = dayjs().set("hour", 0).set("minute", 0); // 今日の00時00分
@@ -27,12 +26,9 @@ const sendGoogleCalendarEvents = async () => {
     const parsedData = parseCalendarEvent(result);
     const lineMessage = parseToLineMessage(parsedData);
 
-    if (shinjingruiGroupId !== undefined) {
-      sendLineMessage(
-        shinjingruiGroupId,
-        "今週の予定です！今週もゆっくり頑張りましょう🐈‍⬛"
-      );
-      sendLineMessage(shinjingruiGroupId, lineMessage);
+    if (myId !== undefined) {
+      sendLineMessage(myId, "今週の予定です！今週もゆっくり頑張りましょう🐈‍⬛");
+      sendLineMessage(myId, lineMessage);
     }
   } catch (err) {
     if (myId !== undefined) {
