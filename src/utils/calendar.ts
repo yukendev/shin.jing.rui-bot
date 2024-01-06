@@ -1,4 +1,6 @@
 import { type calendar_v3 } from "googleapis";
+import dayjs from "dayjs";
+import ja from "dayjs/locale/ja.js";
 
 export const parseCalendarEvent = (
   events: calendar_v3.Schema$Event[]
@@ -15,26 +17,13 @@ export const parseCalendarEvent = (
 const formatStartDate = (date: string | null | undefined) => {
   if (!date) return "不明";
 
-  return new Date(date)
-    .toLocaleString("ja-JP", {
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      weekday: "short",
-    })
-    .replace(/月/g, "/")
-    .replace(/日/g, "")
-    .replace(/,/g, "");
+  return dayjs(date).format("MM/DD(ddd) HH:mm");
 };
 
 const formatEndDate = (date: string | null | undefined) => {
   if (!date) return "不明";
 
-  return new Date(date).toLocaleString("ja-JP", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  return dayjs(date).format("HH:mm");
 };
 
 export const parseToLineMessage = (
@@ -44,6 +33,7 @@ export const parseToLineMessage = (
     start: string | null | undefined,
     end: string | null | undefined
   ) => {
+    dayjs.locale(ja); // タイムゾーンを日本に設定
     console.log("debug1: ", start, end);
     const formattedStart = formatStartDate(start);
     const formattedEnd = formatEndDate(end);
