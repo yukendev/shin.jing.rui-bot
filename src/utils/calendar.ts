@@ -2,6 +2,7 @@ import { type calendar_v3 } from "googleapis";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc.js";
 import timezone from "dayjs/plugin/timezone.js";
+import ja from "dayjs/locale/ja.js";
 
 export const parseCalendarEvent = (
   events: calendar_v3.Schema$Event[]
@@ -19,6 +20,7 @@ const initDayjs = () => {
   dayjs.extend(utc);
   dayjs.extend(timezone);
   dayjs.tz.setDefault("Asia/Tokyo");
+  dayjs.locale(ja);
 };
 
 const formatStartDate = (date: string | null | undefined) => {
