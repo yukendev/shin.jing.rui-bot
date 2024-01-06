@@ -41,10 +41,8 @@ export const parseToLineMessage = (
     end: string | null | undefined
   ) => {
     initDayjs();
-    console.log("debug1: ", start, end);
     const formattedStart = formatStartDate(start);
     const formattedEnd = formatEndDate(end);
-    console.log("debug2: ", formattedStart, formattedEnd);
     return `${formattedStart} ~ ${formattedEnd}`;
   };
 
