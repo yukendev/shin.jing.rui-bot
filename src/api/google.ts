@@ -56,7 +56,9 @@ export const getEventListFromGoogleCalendar = async (
       timeMax,
       timeZone: "Asia/Tokyo",
     });
-    const events = res.data.items;
+    if (!res.data.items)
+      throw new Error("正常にイベントを取得できませんでした");
+    const events = res.data.items.reverse();
     return events;
   } catch (err) {
     console.log("カレンダーからイベント取得時にエラーが発生しました", err);
