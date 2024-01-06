@@ -21,6 +21,7 @@ const formatStartDate = (date: string | null | undefined) => {
       day: "2-digit",
       hour: "2-digit",
       minute: "2-digit",
+      weekday: "short",
     })
     .replace(/月/g, "/")
     .replace(/日/g, "")
