@@ -1,6 +1,7 @@
 import { type calendar_v3 } from "googleapis";
 import dayjs from "dayjs";
-import ja from "dayjs/locale/ja.js";
+import utc from "dayjs/plugin/utc.js";
+import timezone from "dayjs/plugin/timezone.js";
 
 export const parseCalendarEvent = (
   events: calendar_v3.Schema$Event[]
@@ -14,16 +15,22 @@ export const parseCalendarEvent = (
   });
 };
 
+const initDayjs = () => {
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  dayjs.tz.setDefault("Asia/Tokyo");
+};
+
 const formatStartDate = (date: string | null | undefined) => {
   if (!date) return "不明";
 
-  return dayjs(date).format("MM/DD(ddd) HH:mm");
+  return dayjs(date).tz().format("MM/DD(ddd) HH:mm");
 };
 
 const formatEndDate = (date: string | null | undefined) => {
   if (!date) return "不明";
 
-  return dayjs(date).format("HH:mm");
+  return dayjs(date).tz().format("HH:mm");
 };
 
 export const parseToLineMessage = (
@@ -33,7 +40,7 @@ export const parseToLineMessage = (
     start: string | null | undefined,
     end: string | null | undefined
   ) => {
-    dayjs.locale(ja); // タイムゾーンを日本に設定
+    initDayjs();
     console.log("debug1: ", start, end);
     const formattedStart = formatStartDate(start);
     const formattedEnd = formatEndDate(end);
