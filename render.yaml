@@ -26,11 +26,11 @@ services:
     startCommand: pnpm run job:monthly
     region: singapore
 
-   # 日本時間の毎月26日の午前9時30分に実行
+    # 日本時間の毎月26日の午前9時30分に実行
   - type: cron
     name: 26th job
     runtime: node
     schedule: "30 0 26 * *"
     buildCommand: pnpm install && pnpm run build
-    startCommand: pnpm run job:monthly
+    startCommand: pnpm run job:26th
     region: singapore
