@@ -8,7 +8,8 @@
     "format": "npx prettier --write 'src/**/*.ts' && eslint --fix --ext .ts src",
     "job:saturday": "node ./build/jobs/saturday.js",
     "job:monday": "node ./build/jobs/monday.js",
-    "job:monthly": "node ./build/jobs/monthly.js"
+    "job:monthly": "node ./build/jobs/monthly.js",
+    "job:26th": "node ./build/jobs/26th.js"
   },
   "author": "@yukendev",
   "license": "ISC",
