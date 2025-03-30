@@ -18,6 +18,7 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "googleapis": "^130.0.0",
+    "ts-pattern": "^5.7.0",
     "typescript": "^5.3.2"
   },
   "devDependencies": {
