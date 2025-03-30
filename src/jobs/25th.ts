@@ -2,7 +2,7 @@ import { sendLineMessage } from "../api/line.js";
 import dotenv from "dotenv";
 
 /*
-   日本時間の毎月26日の午前9時30分に実行されるジョブ
+   日本時間の毎月25日の午前9時30分に実行されるジョブ
  */
 dotenv.config();
 

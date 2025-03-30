@@ -9,7 +9,7 @@
     "job:saturday": "node ./build/jobs/saturday.js",
     "job:monday": "node ./build/jobs/monday.js",
     "job:monthly": "node ./build/jobs/monthly.js",
-    "job:26th": "node ./build/jobs/26th.js"
+    "job:25th": "node ./build/jobs/25th.js"
   },
   "author": "@yukendev",
   "license": "ISC",

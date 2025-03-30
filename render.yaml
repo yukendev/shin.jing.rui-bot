@@ -18,19 +18,20 @@ services:
     region: singapore
 
   # 日本時間の毎月1日の午後12時に実行
-  - type: cron
-    name: monthly job
-    runtime: node
-    schedule: "0 3 1 * *"
-    buildCommand: pnpm install && pnpm run build
-    startCommand: pnpm run job:monthly
-    region: singapore
+  # MEMO: バンド練習のメッセージは一旦いらんかなぁって感じなんでコメントアウト
+  # - type: cron
+  #   name: monthly job
+  #   runtime: node
+  #   schedule: "0 3 1 * *"
+  #   buildCommand: pnpm install && pnpm run build
+  #   startCommand: pnpm run job:monthly
+  #   region: singapore
 
-    # 日本時間の毎月26日の午前9時30分に実行
+  # 日本時間の毎月25日の午前9時30分に実行
   - type: cron
-    name: 26th job
+    name: 25th job
     runtime: node
-    schedule: "30 0 26 * *"
+    schedule: "30 0 25 * *"
     buildCommand: pnpm install && pnpm run build
-    startCommand: pnpm run job:26th
+    startCommand: pnpm run job:25th
     region: singapore
